@@ -1,0 +1,157 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: 'Open Sans', sans-serif;
+    background: #76ABAE; /* Neutral background color */
+    font-size: 16px;
+    transition: background 0.3s ease-in-out;
+}
+
+.card {
+    background: #EEEEEE;
+    color: #222831;
+    padding: 2em;
+    border-radius: 20px;
+    width: 100%;
+    max-width: 420px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.search {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2em;
+}
+
+button {
+    margin-left: 0.5em;
+    border-radius: 50%;
+    border: none;
+    height: 44px;
+    width: 44px;
+    outline: none;
+    background: #007bff; /* Updated button color */
+    color: white;
+    cursor: pointer;
+    transition: background 0.2s ease-in-out, transform 0.2s ease-in-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+button:hover {
+    background: #0056b3; /* Updated button hover color */
+    transform: scale(1.1);
+}
+
+input.search-bar {
+    border: none;
+    outline: none;
+    padding: 0.4em 1em;
+    border-radius: 24px;
+    background: #cccccc; /* Updated search bar background color */
+    color: #333; /* Updated search bar text color */
+    font-family: inherit;
+    font-size: 1em;
+    width: calc(100% - 60px);
+    transition: background 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+input.search-bar:focus {
+    background: #e0e0e0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+h1.temp {
+    margin: 0;
+    margin-bottom: 0.4em;
+    font-size: 3em;
+    transition: color 0.3s ease-in-out;
+}
+
+.city {
+    font-weight: 600;
+    font-size: 1.5em;
+    transition: color 0.3s ease-in-out;
+}
+
+.flex {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1em;
+}
+
+.icon {
+    animation: rotate 2s infinite linear;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.description {
+    text-transform: capitalize;
+    margin-left: 8px;
+    font-weight: 300;
+    font-size: 1.2em;
+    transition: color 0.3s ease-in-out;
+}
+
+.details {
+    display: flex;
+    justify-content: space-between;
+    font-weight: 300;
+    transition: color 0.3s ease-in-out;
+}
+
+.weather.loading {
+    visibility: hidden;
+    max-height: 20px;
+    position: relative;
+}
+
+.weather.loading:after {
+    visibility: visible;
+    content: "Loading...";
+    color: #222831;
+    position: absolute;
+    top: 0;
+    left: 20px;
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+}
